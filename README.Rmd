@@ -4,9 +4,7 @@ This repository includes the codes and data for statistical analysis of Brewdog 
 
 # The recipe data
 
-The Brewdog recipe data can be retrieved from samjbmason/punkapi GitHub repository, where it lives in JSON format. The recipe data can be thought to consist of 4 elements (methods, malts, hops, info).  
-
-In the *data/punk_recipes.csv* comma separated data file, these elements are combined into a single tabular data format, where each row describes the recipe for a beer.
+The Brewdog recipe data can be retrieved from samjbmason/punkapi GitHub repository, where it lives in JSON format. The recipe data can be thought to consist of 4 elements (methods, malts, hops, info). In the *data/punk_recipes.csv* comma separated data file, these elements are combined into a single tabular data format, where each row describes the recipe for a beer.
 
 ## The combined recipe data
 
