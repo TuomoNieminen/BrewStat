@@ -32,7 +32,7 @@ In addition to fetching and processing the raw JSON data, the *data/punk_recipes
 
 # Getting started
 
-The *data/punk_recipes.csv* is a comma separated file and it can be read into R as follows:
+The *data/punk_recipes.csv* is a comma separated file where each row describes the recipe for a single Brewdog beer. It can be read into R as follows:
 
 ```
 beer <- read.table("data/punk_recipes.csv", sep = ",")
