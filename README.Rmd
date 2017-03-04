@@ -4,29 +4,29 @@ This repository includes the codes and data for statistical analysis of Brewdog 
 
 # The recipe data
 
-The Brewdog recipe data can be retrieved from samjbmason/punkapi GitHub repository, where it lives in JSON format. The recipe data consist of 4 elements, which are combined into a single tabular data format, where each row describes the recipe for a beer.
+The Brewdog recipe data can be retrieved from samjbmason/punkapi GitHub repository, where it lives in JSON format. The recipe data can be thought to consist of 4 elements (methods, malts, hops, info). In *data/unk_recipes.csv*, these elements are combined into a single tabular data format, where each row describes the recipe for a beer.
 
 ## The recipe data in 4 parts
 
-The *data/punk_recipes_create.R* script can be used to accesses the data files in samjbmason/punkapi and processes the JSON recipes into first 4 *R data frames* describing the
+The *data/punk_recipes_create.R* script can be used to accesses the JSON data files in samjbmason/punkapi and processes the recipes into first 4 *R data frames* describing the
 
 - Methods
 - Malts
 - Hops
-- Other information
+- Other general information
 
-related to the beers. Those 4 data frames can then also be combined into a single tabular data file. 
+related to Brewdogs beers. Those 4 data frames can then also be combined into a single tabular data file, described beow.
 
 ## The combined recipe data
 
-In addition to fetching and processing the raw JSON data, the *data/punk_recipes_create.R* also shows how to combine the 4 parts of the recipe data into a single tabular data file. Each row in the data descripes a single beer. The data includes the following features:
+In addition to fetching and processing the raw JSON data, the *data/punk_recipes_create.R* shows how to combine the 4 parts of the recipe data into a single tabular data file. Each row in the data descripes a single beer. The data includes the following features:
 
-- General information about the beer: name, id, description etc
+- Name, id, description etc
 - End product stats: abv, ibu, target_fg, target_og, ebc, srm, ph, attentuation, volume
 - Brewer's tips and food pairings
-- 238 columns describing the hops in the beers. The Hop columns are named as *"Hop".name.attribute.add*. The attributes are one of "bitter", "flavour", "aroma", "twist". Add is one of "start", "middle", "end", "dry hop". The value of each column is the amount of the hop used in the way described by it's attributes in the beer. The amount is zero for the hop-attribute combination is not used in the beer.
-- 90 columns describing the malts in the beer. Each column gives the name of the malt in format *"Malt".name*. The value of each column is the amount of malt used in the beer. The value is zero if the malt was not used in the beer.
-- 14 columns describing the mash temperatures and units and a few columns describing fermentations temperatures. 
+- 238 columns describing the **hops** in the beers. The Hop columns are named as *"Hop".name.attribute.add*. The attributes are one of "bitter", "flavour", "aroma", "twist". Add is one of "start", "middle", "end", "dry hop". The value of each column is the amount of the hop used in the way described by it's attributes in the beer. The amount is zero for the hop-attribute combination is not used in the beer.
+- 90 columns describing the **malts** in the beer. Each column gives the name of the malt in format *"Malt".name*. The value of each column is the amount of malt used in the beer. The value is zero if the malt was not used in the beer.
+- 14 columns describing the **methods**: mash temperatures and units and a few columns describing fermentations temperatures. 
 
 # Getting started
 
