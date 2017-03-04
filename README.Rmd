@@ -8,20 +8,9 @@ The Brewdog recipe data can be retrieved from samjbmason/punkapi GitHub reposito
 
 In the *data/punk_recipes.csv* comma separated data file, these elements are combined into a single tabular data format, where each row describes the recipe for a beer.
 
-## The recipe data in 4 parts
-
-The *data/punk_recipes_create.R* script can be used to accesses the JSON data files in samjbmason/punkapi and process the recipes into four *R data frames* describing the
-
-- Methods
-- Malts
-- Hops
-- Other general information
-
-related to Brewdogs beers. Those 4 data frames can then also be combined into a single tabular data file, described beow.
-
 ## The combined recipe data
 
-In addition to fetching and processing the raw JSON data, the *data/punk_recipes_create.R* shows how to combine the 4 parts of the recipe data into a single tabular data file. Each row in the data descripes a single beer. The data includes the following features:
+In addition to fetching and processing the raw JSON data, the *data/punk_recipes_create.R* shows how to combine the 4 parts of the recipe data into a single tabular data file. Each row in the data descripes a recipe for a single beer. The data includes the following features:
 
 - Name, id, description etc
 - End product stats: abv, ibu, target_fg, target_og, ebc, srm, ph, attentuation, volume
