@@ -24,8 +24,8 @@ The *create_punk_recipes.R* shows how to combine the 4 parts of the recipe data 
 - General information about the beer: name, id, description etc
 - End product stats: abv, ibu, target_fg, target_og, ebc, srm, ph, attentuation, volume
 - Brewer's tips and food pairings
-- 238 columns describing the hops in the beers. The Hop columns are named as *Hop.<hop_name>.<hop_attribute>.<hop_addtime>*. The attributes are one of "bitter", "flavour", "aroma", "twist". The addtime is one of "start", "middle", "end", "dry hop". The value of each column is the amount of the hop used in the way described by it's attributes in the beer. The amount is zero for the hop-attribute combinations not used in the beer.
-- 90 columns describing the malts in the beer. Each column gives the name of the malt in format *Malt.<malt_name>*. The value of each column is the amount of malt used in the beer. The value is zero if the malt was not used in the beer.
+- 238 columns describing the hops in the beers. The Hop columns are named as *"Hop".name.attribute.add*. The attributes are one of "bitter", "flavour", "aroma", "twist". Add is one of "start", "middle", "end", "dry hop". The value of each column is the amount of the hop used in the way described by it's attributes in the beer. The amount is zero for the hop-attribute combination is not used in the beer.
+- 90 columns describing the malts in the beer. Each column gives the name of the malt in format *"Malt".name*. The value of each column is the amount of malt used in the beer. The value is zero if the malt was not used in the beer.
 - 14 columns describing the mash temperatures and units and a few columns describing fermentations temperatures. 
 
 # Getting started
