@@ -11,13 +11,13 @@ beer <- read.table("data/punk_recipes.csv", sep = ",")
 dim(beer) # [1] 234 371
 ```
 
-# The recipe data
+# The punk recipe data
 
-The Brewdog recipe data can be retrieved from samjbmason/punkapi GitHub repository, where it lives in JSON format. The recipe data can be thought to consist of 4 elements (methods, malts, hops, info). In the *data/punk_recipes.csv* comma separated data file, these elements are combined into a single tabular data format.
+The Brewdog recipe data can be retrieved from samjbmason/punkapi GitHub repository, where it lives in JSON format. The recipe data can be thought to consist of 4 elements (methods, malts, hops, info). In addition to fetching and processing the raw JSON data, the *data/punk_recipes_create.R* script shows how to combine the 4 parts of the recipe data into a table where each row descripes the features for a recipe of a single Brewdog beer
 
-## The combined recipe data
+## Features
 
-In addition to fetching and processing the raw JSON data, the *data/punk_recipes_create.R* script shows how to combine the 4 parts of the recipe data into a table where each row descripes the features for a recipe of a single Brewdog beer. The data includes the following features:
+The *data/punk_recipes.csv* data includes the following features:
 
 - Beer name, id, description etc
 - End product stats: abv, ibu, target_fg, target_og, ebc, srm, ph, attentuation, volume
