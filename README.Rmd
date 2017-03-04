@@ -4,7 +4,7 @@ This repository includes the codes and data for statistical analysis of Brewdog 
 
 # The recipe data
 
-The Brewdog recipe data can be retrieved from samjbmason/punkapi GitHub repository, where it lives in JSON format. 
+The Brewdog recipe data can be retrieved from samjbmason/punkapi GitHub repository, where it lives in JSON format. The recipe data consist of 4 elements, which are combined into a single tabular data format, where each row describes the recipe for a beer.
 
 ## The recipe data in 4 parts
 
