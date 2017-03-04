@@ -163,7 +163,7 @@ beer <- beer_datas %>%
   Reduce(function(df1,df2) dplyr::full_join(df1, df2, by="beer_name"), .)
 
 # save to file
-write.table(file = "punk_recipes.csv", beer, sep = ",")
+write.table(file = "data/punk_recipes.csv", beer, sep = ",")
 
-# beer <- read.table("punk_recipes.csv", sep = ",")
+# beer <- read.table("data/punk_recipes.csv", sep = ",")
 # dim(beer) # [1] 234 371
