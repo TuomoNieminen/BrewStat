@@ -8,7 +8,7 @@ The Brewdog recipe data can be retrieved from samjbmason/punkapi GitHub reposito
 
 ## The recipe data in 4 parts
 
-The *create_punk_recipes.R* script can be used to accesses the data files in samjbmason/punkapi and processes the JSON recipes into first 4 *R data frames* describing the
+The *data/punk_recipes_create.R* script can be used to accesses the data files in samjbmason/punkapi and processes the JSON recipes into first 4 *R data frames* describing the
 
 - Methods
 - Malts
@@ -19,7 +19,7 @@ related to the beers. Those 4 data frames can then also be combined into a singl
 
 ## The combined recipe data
 
-The *create_punk_recipes.R* shows how to combine the 4 parts of the recipe data into a single tabular data file. Each row in the data descripes a single beer. The data includes the following features:
+In addition to fetching and processing the raw JSON data, the *data/punk_recipes_create.R* also shows how to combine the 4 parts of the recipe data into a single tabular data file. Each row in the data descripes a single beer. The data includes the following features:
 
 - General information about the beer: name, id, description etc
 - End product stats: abv, ibu, target_fg, target_og, ebc, srm, ph, attentuation, volume
@@ -30,10 +30,10 @@ The *create_punk_recipes.R* shows how to combine the 4 parts of the recipe data 
 
 # Getting started
 
-The punk_recipes.csv is a comma separated file and it can be read into R as follows:
+The *data/punk_recipes.csv* is a comma separated file and it can be read into R as follows:
 
 ```
-beer <- read.table("punk_recipes.csv", sep = ",")
+beer <- read.table("data/punk_recipes.csv", sep = ",")
 dim(beer) # [1] 234 371
 ```
 
