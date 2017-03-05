@@ -1,3 +1,5 @@
+#!py 3
+
 import datetime
 import time
 import json
@@ -195,6 +197,6 @@ def save_beer_links_to_json(link_filename: str, saveto_filename: str, max_link_c
 
 if __name__ == "__main__":
     link_filename = "brewdog_beer_links.json"
-    output_filename = "first5beers.json"
+    output_filename = "data/brewdog_ratebeer.json"
     save_brewery_links_to_json(BREWDOG_URL, link_filename)
     save_beer_links_to_json(link_filename, output_filename, 5)
