@@ -52,8 +52,11 @@ ratings <- cbind(brewdog_ratings, name_type)
 
 # remove the 'Name' column and rename the columns
 ratings <- ratings[-1]
-names(ratings) <- paste0("ratebeer_", names(ratings))
+names(ratings)[-6] <- paste0("ratebeer_", names(ratings)[-6])
 names(ratings)[5] <- "ratebeer_rank"
+
+# remove duplicated beer names
+ratings <- ratings[!duplicated(ratings$beer_name),]
 
 # save
 write.table(file = "data/punk_ratings.csv", ratings, sep = ",")
