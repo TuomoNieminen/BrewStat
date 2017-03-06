@@ -1,23 +1,23 @@
-# Welcome to the BeerStatic repository
+# Welcome to the BrewStat repository
 
 This repository includes the codes and data for statistical analysis of Brewdog brewery beer recipes.
 
 # Getting started
 
-The *data/punk_recipes.csv* is a comma separated file where each row describes the recipe for a single Brewdog beer. It can be read into R as follows:
+The *data/brewstat.csv* is a comma separated file where each row describes the recipe for a single Brewdog beer and the ratebeer.com rating for the beer. The data can be read into R as follows:
 
+```{r}
+brewstat <- read.table("data/brewstat.csv", sep = ",")
+dim(brewstat) # [1] 109 379 
 ```
-beer <- read.table("data/punk_recipes.csv", sep = ",")
-dim(beer) # [1] 234 371
-```
 
-# The punk recipe data
+# The data
 
-The Brewdog recipe data can be retrieved from samjbmason/punkapi GitHub repository, where it lives in JSON format. The recipe data can be thought to consist of 4 elements (methods, malts, hops, info). In addition to fetching and processing the raw JSON data, the *data/punk_recipes_create.R* script shows how to combine the 4 parts of the recipe data into a table where each row descripes the features for a recipe of a single Brewdog beer
+The brewstat data is a combination of [BrewDog's recipe api](https://github.com/samjbmason/punkapi-db) and [ratebeer.com's BrewDog ratings page](https://www.ratebeer.com/Ratings/Beer/ShowBrewerBeers.asp?BrewerID=8534).
 
 ## Features
 
-The *data/punk_recipes.csv* data includes the following features:
+The brewstat data includes the following features:
 
 - Beer name, id, description etc
 - End product stats: abv, ibu, target_fg, target_og, ebc, srm, ph, attentuation, volume
@@ -25,3 +25,13 @@ The *data/punk_recipes.csv* data includes the following features:
 - 238 columns describing the **hops** in the beer. The Hop columns are named as *"Hop".name.attribute.add*. The *attributes* are one of "bitter", "flavour", "aroma", "twist". *Add* is one of "start", "middle", "end", "dry hop". The value of each column is the amount of the hop used (in the way as described by it's attributes) in the beer. A single hop can be used in multiple ways in one beer. The value of a "Hop.*"" column is zero if the name-attribute combination is not used in the beer.
 - 90 columns describing the **malts** in the beer. Each column gives the name of the malt in a format: *"Malt".name*. The value of each column is the amount of malt used in the beer. The value is zero if the malt was not used in the beer.
 - 14 columns describing the **methods**: mash temperatures and units and a few columns describing fermentations temperatures. 
+- The data also includes the following columns retrived from ratebeer.com and are named as "ratebeer_*": ABV, Added (date), Score, Style, rank, beer_type
+
+## Recipe data
+
+The Brewdog recipe data is retrieved from [samjbmason/punkapi GitHub repository](https://github.com/samjbmason/punkapi-db), where it lives in JSON format. The recipe data can be thought to consist of 4 elements (methods, malts, hops, info). In addition to fetching and processing the raw JSON data, the *data/punk_recipes_create.R* script shows how to combine the 4 parts of the recipe data into a table where each row descripes the features for a recipe of a single Brewdog beer.
+
+# Rating data
+
+The rating data is retrieved from [ratebeer.com's BrewDog beer list](https://www.ratebeer.com/Ratings/Beer/ShowBrewerBeers.asp?BrewerID=8534). It includes a few descriptive stats and the ratebeer rating and ranking for the beers. The *data/punk_ratings_create.R* script shows how to scape the data from web page using R.
+
