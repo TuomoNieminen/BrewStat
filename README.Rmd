@@ -1,12 +1,12 @@
 # Welcome to the BrewStat repository
 
-This repository includes the codes and data for statistical analysis of Brewdog brewery beer recipes.
+This repository includes the codes and data for statistical analysis of Brewdog brewery beer recipes and their ratebeer ratings.
 
 # Getting started
 
-The *data/brewstat.csv* is a comma separated file where each row describes the recipe for a single Brewdog beer and the ratebeer.com rating for the beer. The data can be read into R as follows:
+The *data/brewstat.csv* is a comma separated file where each row describes the recipe and the ratebeer.com rating for a single BrewDog beer. The data can be read into R as follows:
 
-```{r}
+```
 brewstat <- read.table("data/brewstat.csv", sep = ",")
 dim(brewstat) # [1] 109 379 
 ```
@@ -29,9 +29,21 @@ The brewstat data includes the following features:
 
 ## Recipe data
 
-The Brewdog recipe data is retrieved from [samjbmason/punkapi GitHub repository](https://github.com/samjbmason/punkapi-db), where it lives in JSON format. The recipe data can be thought to consist of 4 elements (methods, malts, hops, info). In addition to fetching and processing the raw JSON data, the *data/punk_recipes_create.R* script shows how to combine the 4 parts of the recipe data into a table where each row descripes the features for a recipe of a single Brewdog beer.
+The Brewdog recipe data is retrieved from [samjbmason/punkapi GitHub repository](https://github.com/samjbmason/punkapi-db), where it lives in JSON format. 
+
+The recipe data can be thought to consist of 4 elements (methods, malts, hops, info). In addition to fetching and processing the raw JSON data, the *data/punk_recipes_create.R* script shows how to combine the 4 parts of the recipe data into a table where each row descripes the features for a recipe of a single Brewdog beer.
+
+```
+recipes <- read.table("data/punk_recipes.csv", sep = ",")
+dim(recipes) # [1] 234 371
+```
 
 # Rating data
 
-The rating data is retrieved from [ratebeer.com's BrewDog beer list](https://www.ratebeer.com/Ratings/Beer/ShowBrewerBeers.asp?BrewerID=8534). It includes a few descriptive stats and the ratebeer rating and ranking for the beers. The *data/punk_ratings_create.R* script shows how to scape the data from web page using R.
+The rating data is retrieved from [ratebeer.com's BrewDog beer list](https://www.ratebeer.com/Ratings/Beer/ShowBrewerBeers.asp?BrewerID=8534) on 9.3.2017. It includes a few descriptive stats and the ratebeer rating and ranking for the BrewDog beers. The *data/punk_ratings_create.R* script shows how to scrape the data from a web page using R.
+
+```
+ratings <- read.table("data/punk_ratings.csv", sep = ",")
+dim(ratings) # [1] 337   7
+```
 
