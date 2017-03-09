@@ -38,7 +38,7 @@ recipes <- read.table("data/punk_recipes.csv", sep = ",")
 dim(recipes) # [1] 234 371
 ```
 
-# Rating data
+## Rating data
 
 The rating data is retrieved from [ratebeer.com's BrewDog beer list](https://www.ratebeer.com/Ratings/Beer/ShowBrewerBeers.asp?BrewerID=8534) on 9.3.2017. It includes a few descriptive stats and the ratebeer rating and ranking for the BrewDog beers. The *data/punk_ratings_create.R* script shows how to scrape the data from a web page using R.
 
