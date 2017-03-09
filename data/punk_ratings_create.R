@@ -62,4 +62,4 @@ ratings <- ratings[!duplicated(ratings$beer_name),]
 write.table(file = "data/punk_ratings.csv", ratings, sep = ",")
 
 # ratings <- read.table("data/punk_ratings.csv", sep = ",")
-# head(ratings)
+# dim(ratings) # [1] 337   7

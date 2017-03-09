@@ -32,6 +32,9 @@ brewstat <- dplyr::inner_join(ratings, recipes, by = "beer_name2")
 # save
 write.table(file = "data/brewstat.csv", brewstat, sep = ",")
 
+# brewstat <- read.table("data/brewstat.csv", sep = ",")
+# dim(brewstat)
+
 # explore fuzzy joining possiblities. 
 # results: would be better to do by hand, with the aid of similarity measures
 #
